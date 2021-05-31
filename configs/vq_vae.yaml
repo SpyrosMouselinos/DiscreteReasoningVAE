@@ -1,0 +1,28 @@
+model_params:
+  name: 'VQVAE'
+  in_channels: 3
+  embedding_dim: 64
+  num_embeddings: 512
+  img_size: 64
+  beta: 0.25
+
+exp_params:
+  dataset: clevr
+  data_path: "./data/"
+  img_size: 64
+  batch_size: 3
+  LR: 0.001
+  weight_decay: 0.0
+  scheduler_gamma: 0.0
+  n_workers: 0
+  max_train_images: 6
+  max_val_images: 3
+
+trainer_params:
+  gpus: [0]
+  max_epochs: 30
+
+logging_params:
+  save_dir: "./logs/"
+  name: "vqvae"
+  manual_seed: 1995
