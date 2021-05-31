@@ -1,2 +1,3 @@
 # DiscreteReasoningVAE
-Exploring Discrete Latent Representations for Visual Reasoning
+Exploring Discrete Latent Representations  🎲 
+For Visual Reasoning  🤖 
