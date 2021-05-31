@@ -32,11 +32,11 @@ class ClevrFolderDataset(Dataset):
         self.discover_images_and_make_correspondence_dict()
 
     def discover_images_and_make_correspondence_dict(self):
-        self.idx2img = {i: f for i, f in enumerate(os.listdir(os.path.join(self.folder, self.split))) if '.png' in f}
+        self.idx2img = {i: f for i, f in enumerate(os.listdir(os.path.join(self.folder, self.split))) if ('.png' in f) and (i < self.max_images)}
         return
 
     def __len__(self):
-        return self.max_images
+        return len(self.idx2img)
 
     def __getitem__(self, idx):
         if torch.is_tensor(idx):

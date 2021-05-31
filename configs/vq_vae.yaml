@@ -8,9 +8,9 @@ model_params:
 
 exp_params:
   dataset: clevr
-  data_path: "./data/"
+  data_path: "C://Users/Guldan/Desktop/data/"
   img_size: 64
-  batch_size: 144
+  batch_size: 16
   LR: 0.001
   weight_decay: 0.0
   scheduler_gamma: 0.0
