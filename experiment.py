@@ -123,7 +123,7 @@ class VAEXperiment(pl.LightningModule):
         if self.params['dataset'] == 'fake':
             dataset = FakeData(size=200, num_classes=1, image_size=(3, 224, 224), transform=transform)
         elif self.params['dataset'] == 'clevr':
-            dataset = ClevrFolderDataset(folder='./data', split='train', max_images=self.params['max_train_images'],
+            dataset = ClevrFolderDataset(folder=self.params['data_path'], split='train', max_images=self.params['max_train_images'],
                                          transform=None)
         else:
             raise ValueError('Undefined dataset type')
@@ -142,7 +142,7 @@ class VAEXperiment(pl.LightningModule):
         if self.params['dataset'] == 'fake':
             sample_dataset = FakeData(size=200, num_classes=1, image_size=(3, 224, 224), transform=transform)
         elif self.params['dataset'] == 'clevr':
-            sample_dataset = ClevrFolderDataset(folder='./data', split='val', max_images=self.params['max_val_images'],
+            sample_dataset = ClevrFolderDataset(folder=self.params['data_path'], split='val', max_images=self.params['max_val_images'],
                                                 transform=None)
         else:
             raise ValueError('Undefined dataset type')
